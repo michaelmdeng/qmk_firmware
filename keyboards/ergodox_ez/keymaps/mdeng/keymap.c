@@ -41,18 +41,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   CTL_T(KC_ESC), KC_A,     KC_S,    KC_D,     KC_F,     KC_G,
   KC_LSFT,       KC_Z,     KC_X,    KC_C,     KC_V,     KC_B,     _______,
   KC_LCTL,       KC_LGUI,  KC_LALT, MO(MDIA), MO(SYMB),
-                                                        _______, _______,
+                                                        DM_REC1,  DM_PLY1,
                                                                   _______,
-                                              KC_SPC,   MO(SYMB), _______,
+                                              KC_SPC,   MO(SYMB), DM_RSTP,
   // right hand
   _______,       KC_6,     KC_7,    KC_8,     KC_9,     KC_0,     KC_BSPC,
   _______,       KC_Y,     KC_U,    KC_I,     KC_O,     KC_P,     XXXXXXX,
                  KC_H,     KC_J,    KC_K,     KC_L,     KC_SCLN,  KC_ENT,
   _______,       KC_N,     KC_M,    KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,
                            KC_SPC,  MO(SYMB), MO(MDIA), KC_MENU,  KC_RCTL,
-  _______, _______,
+  DM_PLY2, DM_REC2,
   _______,
-  _______,       MO(SYMB), KC_SPC
+  DM_RSTP,       MO(SYMB), KC_SPC
 ),
 
 /* Keymap 0: Mac Basic Layer
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   LCMD_T(KC_ESC),KC_A,     KC_S,    KC_D,     KC_F,     KC_G,
   KC_LSFT,       KC_Z,     KC_X,    KC_C,     KC_V,     KC_B,     _______,
   KC_LCTL,       KC_LCMD,  KC_LALT, MO(MDIA), MO(SYMB),
-                                                        _______, _______,
+                                                        _______,  _______,
                                                                   _______,
                                               KC_SPC,   MO(SYMB), _______,
   // right hand
@@ -141,11 +141,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 2: Media and mouse keys
  *
  * ,--------------------------------------------------. ,--------------------------------------------------.
- * |        |      |      |      |      |      |      | |      |      |      |      |      | NONE |  Del   |
+ * |        | Mute |VolDwn|VolUp |      |      |      | |      |      |      |      | BrUp |BrDwn |  Del   |
  * |--------+------+------+------+------+-------------| |------+------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      | |      |ScrLk |Pause |NumLk | Ins  |      |  NONE  |
+ * |        |      | MUp  |      |      |      |      | |      |PrtSc |ScrLk |Pause |Ins   |NumLk |  NONE  |
  * |--------+------+------+------+------+------|      | |      |------+------+------+------+------+--------|
- * | Caps   |      |      |      |      |      |------| |------| Home |PgDwn | PgUp | End  |      |  Play  |
+ * | Caps   |MLeft | MDown|MRight|      |      |------| |------| Home |PgDwn | PgUp | End  |      | MClick |
  * |--------+------+------+------+------+------|      | |      |------+------+------+------+------+--------|
  * |        |      |      |      |      |      |      | |      |      |      |      |      |      |        |
  * `--------+------+------+------+------+-------------' `-------------+------+------+------+------+--------'
@@ -161,18 +161,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [MDIA] = LAYOUT_ergodox(
   // left hand
-  _______, _______, _______, _______, _______, _______, _______,
-  _______, _______, _______, _______, _______, _______, _______,
-  KC_CAPS, _______, _______, _______, _______, _______,
+  _______, KC_MUTE, KC_VOLD, KC_VOLU, _______, _______, _______,
+  _______, _______, KC_MS_U, _______, _______, _______, _______,
+  KC_CAPS, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______,
   _______, _______, _______, _______, _______, _______, _______,
   _______, _______, _______, _______, _______,
                                                _______, _______,
                                                         _______,
                                       _______, _______, _______,
   // right hand
-  _______, _______, _______, _______, _______, XXXXXXX, KC_DEL,
-  _______, _______, _______, _______, _______, _______, XXXXXXX,
-           _______, _______, _______, _______, _______, _______,
+  _______, _______, _______, _______, KC_BRID, KC_BRIU, KC_DEL,
+  _______, KC_PSCR, KC_SLCK, KC_PAUS, KC_INS,  KC_NLCK, XXXXXXX,
+           KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, KC_BTN1,
   _______, _______, _______, _______, _______, _______, _______,
                     _______, _______, _______, _______, _______,
   _______, _______,
